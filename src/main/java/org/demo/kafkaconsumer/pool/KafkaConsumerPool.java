@@ -29,7 +29,7 @@ public class KafkaConsumerPool {
         config.setMinIdle(2); // minimum number of idle objects in the pool
         config.setMaxIdle(5); // maximum number of idle objects in the pool
         config.setBlockWhenExhausted(true); // is block when the pool is exhausted
-        config.setMaxWait(Duration.ofMillis(50)); // max wait time for borrow object
+        config.setMaxWait(Duration.ofMillis(3000)); // max wait time for borrow object
         this.consumerPool = new GenericObjectPool<>(consumerFactory, config);
         // Initialize pool with minIdle consumers
         initializePoolWithMinIdleConsumers();
